@@ -93,17 +93,19 @@ class Medico {
     }
 }
 
-/* Classe do hospital*/
-class Hospital {
-    protected $nome;
-    protected $pacientes;
-    protected $medicos;
+  /* Classe do hospital*/
+  class Hospital {
+      protected $nome;
+      protected $endereco;
+      protected $pacientes;
+      protected $medicos;
 
-    public function __construct($nome) {
-        $this->nome = $nome;
-        $this->pacientes = [];
-        $this->medicos = [];
-    }
+      public function __construct($nome, $endereco) {
+          $this->nome = $nome;
+          $this->endereco = $endereco;
+          $this->pacientes = [];
+          $this->medicos = [];
+      }
 
     public function adicionarPaciente(Paciente $paciente, Medico $medicoResponsavel) {
         $paciente->setMedicoResponsavel($medicoResponsavel);
@@ -121,10 +123,20 @@ class Hospital {
     public function listarMedicos() {
         return $this->medicos;
     }
+    
+    public function getNome() {
+        return $this->nome;
+    }
+    
+    public function getEndereco() {
+        return $this->endereco;
+    }
 }
 
 /* Criando um hospital */
-$hospital = new Hospital("Hospital Regional");
+$nomeHospital = "Hospital Regional";
+$enderecoHospital = "Av. Principal, 45, Centro - Juazeiro do Norte - CE";
+$hospital = new Hospital($nomeHospital, $enderecoHospital);
 
 /* Adicionando médicos */
 $medico1 = new Medico("Dr. João", "Traumatologista");
@@ -146,7 +158,10 @@ $paciente2->adicionarConsulta("2024-04-11", "Febre recorrente");
 $hospital->adicionarPaciente($paciente1, $medico1);
 $hospital->adicionarPaciente($paciente2, $medico2);
 
+
 /* Listando os pacientes */
+echo "Hospital: " . $hospital->getNome() . "\n";
+echo "Endereço: " . $hospital->getEndereco() . "\n\n";
 $pacientes = $hospital->listarPacientes();
 
 echo "Pacientes:\n";
