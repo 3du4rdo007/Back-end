@@ -1,37 +1,34 @@
 <?php
+
 class Paciente {
-    private $nome;
-    private $idade;
-    private $genero;
+    private $PacienteID;
+    private $Nome;
+    private $Idade;
+    private $Genero;
 
-    public function __construct($nome, $idade, $genero) {
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->genero = $genero;
+    public function getPACIENTEID() {
+        return $this->PacienteID;
     }
-
-    public function getNome() {
-        return $this->nome;
+    public function setPACIENTEID($PacienteID){
+        $this->PacienteID = $PacienteID;
     }
-
-    public function getIdade() {
-        return $this->idade;
+    public function getNOME(){
+        return $this->Nome;
     }
-
-    public function getGenero() {
-        return $this->genero;
+    public function setNOME($Nome){
+        $this->Nome = $Nome;
     }
-
-    public function setNome($nome) {
-        $this->nome = $nome;
+    public function getIDADE(){
+        return $this->Idade; 
     }
-
-    public function setIdade($idade) {
-        $this->idade = $idade;
+    public function setIDADE($Idade){
+        $this->Idade = $Idade;
     }
-
-    public function setGenero($genero) {
-        $this->genero = $genero;
+    public function getGENERO(){
+        return $this->Genero;
+    }
+    public function setGENERO($Genero){
+        $this->Genero = $Genero;
     }
 }
 ?>
