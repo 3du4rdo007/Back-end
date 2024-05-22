@@ -1,45 +1,32 @@
 <?php
 class Consulta {
-    private $paciente;
-    private $medico;
-    private $data;
+    private $ConsultaID;
+    private $Paciente;
+    private $Medico;
+    private $Data;
 
-    public function __construct($paciente, $medico, $data) {
-        $this->paciente = $paciente;
-        $this->medico = $medico;
-        $this->data = $data;
+    public function getCONSULTAID(){
+        return $this->ConsultaID;
     }
-
-    public function getPaciente() {
-        return $this->paciente;
+    public function setCONSULTAID($ConsultaID){
+        $this->ConsultaID = $ConsultaID;
     }
-
-    public function getMedico() {
-        return $this->medico;
+    public function getPACIENTE(){
+        return $this->Paciente;
     }
-
-    public function getData() {
-        return $this->data;
+    public function setPACIENTE($Paciente){
+        $this->Paciente = $Paciente;
     }
-
-    public function setPaciente($paciente) {
-        $this->paciente = $paciente;
+    public function getMEDICO(){
+        return $this->Medico;
     }
-
-    public function setMedico($medico) {
-        $this->medico = $medico;
+    public function setMEDICO($Medico){
+        $this->Medico = $Medico;
     }
-
-    public function setData($data) {
-        $this->data = $data;
+    public function getDATA(){
+        return $this->Data;
     }
-
-    public function imprimirDetalhes() {
-        echo "Consulta marcada para " . $this->data . ":\n";
-        echo "Paciente: " . $this->paciente->getNome() . "\n";
-        echo "Idade: " . $this->paciente->getIdade() . "\n";
-        echo "Médico: " . $this->medico->getNome() . " (" . $this->medico->getEspecialidade() . ")\n";
-        echo "CRM: " . $this->medico->getCrm() . "\n";
-    }
+    public function setDATA($Data){
+        $this->Data = $Data;
 }
 ?>
