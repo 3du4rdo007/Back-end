@@ -1,37 +1,33 @@
 <?php
 class Medico {
-    private $nome;
-    private $especialidade;
-    private $crm;
+    private $MedicoID;
+    private $Nome;
+    private $Especialidade;
+    private $CRM;
 
-    public function __construct($nome, $especialidade, $crm) {
-        $this->nome = $nome;
-        $this->especialidade = $especialidade;
-        $this->crm = $crm;
+    public function getMEDICOID(){
+        return $this->MedicoID;
     }
-
-    public function getNome() {
-        return $this->nome;
+    public function setMEDICOID($MedicoID){
+        $this->MedicoID = $MedicoID;
     }
-
-    public function getEspecialidade() {
-        return $this->especialidade;
+    public function getNOME(){
+        return $this->Nome;
     }
-
-    public function getCrm() {
-        return $this->crm;
+    public function setNOME($Nome){
+        $this->Nome = $Nome;
     }
-
-    public function setNome($nome) {
-        $this->nome = $nome;
+    public function getESPECIALIDADE(){
+        return $this->Especialidade;
     }
-
-    public function setEspecialidade($especialidade) {
-        $this->especialidade = $especialidade;
+    public function setESPECIALIDADE($Especialidade){
+        $this->Especialidade = $Especialidade;
     }
-
-    public function setCrm($crm) {
-        $this->crm = $crm;
+    public function getCRM(){
+        return $this->CRM;
+    }
+    public function setCRM($CRM){
+        $this->CRM = $CRM;
     }
 }
 ?>
