@@ -1,11 +1,11 @@
 <?php
 class ConsultaDAO{
     public function create (Consulta $Consulta) {
-        $sql = 'INSERT INTO Consulta (Paciente, Medico, Data) VALUES (?,?,?)';
+        $sql = 'INSERT INTO Consulta (Paciente, Medico, DataConsulta) VALUES (?,?,?)';
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $Consulta->getPACIENTE());
         $stmt->bindValue(2, $Consulta->getMEDICO());
-        $stmt->bindValue(3, $Consulta->getDATA());
+        $stmt->bindValue(3, $Consulta->getDATACONSULTA());
 
         $stmt->execute();
     }
@@ -25,11 +25,11 @@ class ConsultaDAO{
     }
 
     public function update(Consulta $Consulta) {
-        $sql = 'UPDATE Consulta SET Paciente = ?, Medico = ?, Data = ?  WHERE ConsultaID = ?';
+        $sql = 'UPDATE Consulta SET Paciente = ?, Medico = ?, DataConsulta = ?  WHERE ConsultaID = ?';
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $Consulta->getPACIENTE());
         $stmt->bindValue(2, $Consulta->getMEDICO());
-        $stmt->bindValue(3, $Consulta->getDATA());
+        $stmt->bindValue(3, $Consulta->getDATACONSULTA());
         
 
         $stmt->execute();
