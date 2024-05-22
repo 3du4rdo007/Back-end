@@ -3,7 +3,7 @@ class Consulta {
     private $ConsultaID;
     private $Paciente;
     private $Medico;
-    private $Data;
+    private $DataConsulta;
 
     public function getCONSULTAID(){
         return $this->ConsultaID;
@@ -23,10 +23,10 @@ class Consulta {
     public function setMEDICO($Medico){
         $this->Medico = $Medico;
     }
-    public function getDATA(){
-        return $this->Data;
+    public function getDATACONSULTA(){
+        return $this->DataConsulta;
     }
-    public function setDATA($Data){
-        $this->Data = $Data;
+    public function setDATACONSULTA($DataConsulta){
+        $this->DataConsulta = $DataConsulta;
 }
 ?>
