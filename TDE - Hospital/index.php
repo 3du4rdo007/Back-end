@@ -1,9 +1,9 @@
 <?php
-require_once 'Conexao.php';
-require_once 'Paciente.php';
-require_once 'Medico.php';
-require_once 'Consulta.php';
-require_once 'ConsultaDAO.php';
+require_once 'Back/conexao.php';
+require_once 'Back/paciente.php';
+require_once 'Back/medico.php';
+require_once 'Back/consulta.php';
+require_once 'Back/consultaDAO.php';
 
 // Função para salvar Paciente no banco de dados
 function savePaciente($paciente) {
