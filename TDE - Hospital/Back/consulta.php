@@ -1,8 +1,8 @@
 <?php
 class Consulta {
     private $ConsultaID;
-    private $Paciente;
-    private $Medico;
+    private $PacienteID;
+    private $MedicoID;
     private $DataConsulta;
 
     public function getCONSULTAID(){
@@ -12,16 +12,16 @@ class Consulta {
         $this->ConsultaID = $ConsultaID;
     }
     public function getPACIENTE(){
-        return $this->Paciente;
+        return $this->PacienteID;
     }
-    public function setPACIENTE($Paciente){
-        $this->Paciente = $Paciente;
+    public function setPACIENTE($PacienteID){
+        $this->PacienteID = $PacienteID;
     }
     public function getMEDICO(){
-        return $this->Medico;
+        return $this->MedicoID;
     }
-    public function setMEDICO($Medico){
-        $this->Medico = $Medico;
+    public function setMEDICO($MedicoID){
+        $this->MedicoID = $MedicoID;
     }
     public function getDATACONSULTA(){
         return $this->DataConsulta;
