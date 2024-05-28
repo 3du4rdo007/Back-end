@@ -1,7 +1,7 @@
 <?php
 class ConsultaDAO{
     public function create (Consulta $Consulta) {
-        $sql = 'INSERT INTO Consulta (Paciente, Medico, DataConsulta) VALUES (?,?,?)';
+        $sql = 'INSERT INTO Consulta (PacienteID, MedicoID, DataConsulta) VALUES (?,?,?)';
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $Consulta->getPACIENTE());
         $stmt->bindValue(2, $Consulta->getMEDICO());
@@ -11,7 +11,10 @@ class ConsultaDAO{
     }
 
     public function read(){
-        $sql = 'SELECT * FROM Consulta';
+        $sql = 'SELECT c.ConsultaID, p.Nome AS PacienteNome, m.Nome AS MedicoNome, c.DataConsulta 
+        FROM Consulta c 
+        JOIN Paciente p ON c.PacienteID = p.PacienteID 
+        JOIN Medico m ON c.MedicoID = m.MedicoID';
 
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->execute();
@@ -25,7 +28,7 @@ class ConsultaDAO{
     }
 
     public function update(Consulta $Consulta) {
-        $sql = 'UPDATE Consulta SET Paciente = ?, Medico = ?, DataConsulta = ?  WHERE ConsultaID = ?';
+        $sql = 'UPDATE Consulta SET PacienteID = ?, MedicoID = ?, DataConsulta = ?  WHERE ConsultaID = ?';
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $Consulta->getPACIENTE());
         $stmt->bindValue(2, $Consulta->getMEDICO());
