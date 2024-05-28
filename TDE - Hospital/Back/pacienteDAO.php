@@ -24,7 +24,7 @@ class PacienteDAO{
         }
     }
 
-    public function update(Paciente $paciente) {
+    public function update(Paciente $Paciente) {
         $sql = 'UPDATE paciente SET Nome = ?, Idade = ?, Genero = ?  WHERE pacienteID = ?';
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $Paciente->getNOME());
